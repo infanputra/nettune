@@ -45,7 +45,7 @@ Or use the NPM wrapper:
   "mcpServers": {
     "nettune": {
       "command": "npx",
-      "args": ["nettune-mcp", "--api-key", "YOUR_SECRET_KEY", "--server", "http://YOUR_SERVER:9876"]
+      "args": ["@jtsang/nettune-mcp", "--api-key", "YOUR_SECRET_KEY", "--server", "http://YOUR_SERVER:9876"]
     }
   }
 }
@@ -53,21 +53,22 @@ Or use the NPM wrapper:
 
 ## Available MCP Tools
 
-| Tool | Description |
-|------|-------------|
-| `nettune.test_rtt` | Measure RTT (round-trip time) to server |
-| `nettune.test_throughput` | Measure upload/download throughput |
+| Tool                                | Description                                         |
+| ----------------------------------- | --------------------------------------------------- |
+| `nettune.test_rtt`                | Measure RTT (round-trip time) to server             |
+| `nettune.test_throughput`         | Measure upload/download throughput                  |
 | `nettune.test_latency_under_load` | Detect bufferbloat by measuring latency during load |
-| `nettune.snapshot_server` | Create a configuration snapshot for rollback |
-| `nettune.list_profiles` | List available optimization profiles |
-| `nettune.show_profile` | Show details of a specific profile |
-| `nettune.apply_profile` | Apply a profile (dry_run or commit mode) |
-| `nettune.rollback` | Rollback to a previous snapshot |
-| `nettune.status` | Get current server status and configuration |
+| `nettune.snapshot_server`         | Create a configuration snapshot for rollback        |
+| `nettune.list_profiles`           | List available optimization profiles                |
+| `nettune.show_profile`            | Show details of a specific profile                  |
+| `nettune.apply_profile`           | Apply a profile (dry_run or commit mode)            |
+| `nettune.rollback`                | Rollback to a previous snapshot                     |
+| `nettune.status`                  | Get current server status and configuration         |
 
 ## Built-in Profiles
 
 ### bbr-fq-default
+
 Conservative BBR + FQ setup. Safe for most servers.
 
 - Enables BBR congestion control
@@ -75,6 +76,7 @@ Conservative BBR + FQ setup. Safe for most servers.
 - Enables MTU probing
 
 ### bbr-fq-tuned-32mb
+
 BBR with increased buffers for high-BDP (bandwidth-delay product) links.
 
 - All settings from bbr-fq-default
@@ -128,16 +130,19 @@ Flags:
 ## HTTP API Endpoints
 
 ### Probe Endpoints
+
 - `GET /probe/echo` - Latency test endpoint
 - `GET /probe/download?bytes=N` - Download test
 - `POST /probe/upload` - Upload test
 - `GET /probe/info` - Server information
 
 ### Profile Endpoints
+
 - `GET /profiles` - List profiles
 - `GET /profiles/:id` - Get profile details
 
 ### System Endpoints
+
 - `POST /sys/snapshot` - Create snapshot
 - `GET /sys/snapshot/:id` - Get snapshot
 - `POST /sys/apply` - Apply profile
@@ -147,19 +152,25 @@ Flags:
 ## Troubleshooting
 
 ### Permission Issues
+
 The server needs root privileges to modify system settings:
+
 ```bash
 sudo nettune server --api-key YOUR_KEY
 ```
 
 ### BBR Not Available
+
 If BBR is not listed in available congestion controls, you may need to load the kernel module:
+
 ```bash
 sudo modprobe tcp_bbr
 ```
 
 ### Firewall Issues
+
 Ensure port 9876 (or your custom port) is accessible:
+
 ```bash
 sudo ufw allow 9876/tcp
 ```
