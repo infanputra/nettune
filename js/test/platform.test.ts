@@ -39,6 +39,6 @@ describe('getBinaryName', () => {
 
   test('generates correct name for windows with .exe extension', () => {
     const platform: PlatformInfo = { os: 'win32', arch: 'x64' };
-    expect(getBinaryName(platform)).toBe('nettune-win32-amd64.exe');
+    expect(getBinaryName(platform)).toBe('nettune-windows-amd64.exe');
   });
 });

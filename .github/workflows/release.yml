@@ -51,6 +51,8 @@ jobs:
           GOOS=linux GOARCH=arm64 go build -ldflags "${LDFLAGS}" -o dist/nettune-linux-arm64 ./cmd/nettune
           GOOS=darwin GOARCH=amd64 go build -ldflags "${LDFLAGS}" -o dist/nettune-darwin-amd64 ./cmd/nettune
           GOOS=darwin GOARCH=arm64 go build -ldflags "${LDFLAGS}" -o dist/nettune-darwin-arm64 ./cmd/nettune
+          GOOS=windows GOARCH=amd64 go build -ldflags "${LDFLAGS}" -o dist/nettune-windows-amd64.exe ./cmd/nettune
+          GOOS=windows GOARCH=arm64 go build -ldflags "${LDFLAGS}" -o dist/nettune-windows-arm64.exe ./cmd/nettune
 
           # Generate checksums
           cd dist
@@ -89,6 +91,8 @@ jobs:
             dist/nettune-linux-arm64
             dist/nettune-darwin-amd64
             dist/nettune-darwin-arm64
+            dist/nettune-windows-amd64.exe
+            dist/nettune-windows-arm64.exe
             dist/checksums.txt
           generate_release_notes: true
           draft: false

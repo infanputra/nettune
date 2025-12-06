@@ -1,10 +1,11 @@
 import { Command } from 'commander';
+import pkg from '../package.json' assert { type: 'json' };
 import type { CLIOptions } from './types.js';
 
 /**
  * Package version - will be replaced during build
  */
-const VERSION = '0.1.0';
+const VERSION = pkg.version as string;
 
 /**
  * Parse command line arguments and return CLI options

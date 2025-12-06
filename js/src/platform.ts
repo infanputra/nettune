@@ -56,8 +56,9 @@ export function detectPlatform(): PlatformInfo {
 export function getBinaryName(platform: PlatformInfo): string {
   // Map our arch names to Go-style names used in releases
   const archName = platform.arch === 'x64' ? 'amd64' : platform.arch;
+  const osName = platform.os === 'win32' ? 'windows' : platform.os;
   const ext = platform.os === 'win32' ? '.exe' : '';
-  return `nettune-${platform.os}-${archName}${ext}`;
+  return `nettune-${osName}-${archName}${ext}`;
 }
 
 /**
