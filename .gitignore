@@ -1,0 +1,33 @@
+### General ###
+.DS_Store
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+
+### Go ###
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go build output
+*.test
+*.out
+
+# Go coverage
+coverage.out
+*.coverprofile
+
+# Go modules / vendor (if you do not plan to commit vendor to the repository)
+vendor/
+
+# Go workspace
+go.work
+go.work.sum
+
+dist

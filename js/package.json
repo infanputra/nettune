@@ -1,0 +1,48 @@
+{
+  "name": "@jtsang/nettune-mcp",
+  "version": "0.1.0",
+  "description": "MCP stdio wrapper for nettune - TCP network optimization tool",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "nettune-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target node --format esm && echo '#!/usr/bin/env node' | cat - dist/index.js > dist/tmp && mv dist/tmp dist/index.js && chmod +x dist/index.js",
+    "dev": "bun run src/index.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": [
+    "nettune",
+    "mcp",
+    "tcp",
+    "network",
+    "optimization",
+    "bbr",
+    "cli"
+  ],
+  "author": "jtsang4",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtsang4/nettune.git",
+    "directory": "js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.3",
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  }
+}
