@@ -36,7 +36,7 @@ jobs:
         run: go build -o dist/nettune ./cmd/nettune
 
       - name: Verify binary
-        run: ./dist/nettune --version
+        run: ./dist/nettune version
 
   test-js:
     name: Test JS
