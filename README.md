@@ -85,6 +85,59 @@ BBR with increased buffers for high-BDP (bandwidth-delay product) links.
 - Optimized tcp_rmem/tcp_wmem
 - Disables slow start after idle
 
+### low-latency
+
+Optimized for minimal latency scenarios (gaming, trading, interactive apps).
+
+- Uses FQ_CoDel qdisc for active queue management
+- Smaller buffers (4MB) to reduce queuing delay
+- Enables TCP Fast Open
+- Disables slow start after idle
+
+### high-throughput-64mb
+
+Aggressive tuning for maximum throughput on high-bandwidth links.
+
+- 64MB socket buffers for long-distance transfers
+- Higher default buffer sizes
+- Increased backlog and connection limits
+- Optimized for intercontinental data transfers
+
+### satellite-link
+
+Optimized for satellite or high-latency links (300ms+ RTT).
+
+- 128MB socket buffers for extreme BDP scenarios
+- Aggressive buffer scaling
+- Disables metrics saving for consistent performance
+- Suitable for very high bandwidth × latency products
+
+### anti-bufferbloat
+
+Uses CAKE qdisc for advanced Active Queue Management.
+
+- Eliminates bufferbloat while maintaining throughput
+- Enables ECN (Explicit Congestion Notification)
+- Ideal when latency-under-load tests show bufferbloat
+
+### web-server
+
+Balanced configuration for web servers.
+
+- Optimized for many concurrent connections
+- TCP Fast Open enabled
+- Tuned keepalive settings
+- High connection backlog (65535 somaxconn)
+
+### database-server
+
+Optimized for database servers with persistent connections.
+
+- Balanced latency/throughput for mixed workloads
+- Tuned keepalive for connection pooling
+- SYN cookies enabled for security
+
+
 ## Building from Source
 
 ```bash

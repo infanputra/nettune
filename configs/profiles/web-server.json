@@ -1,0 +1,34 @@
+{
+  "id": "web-server",
+  "name": "Web Server Optimized",
+  "description": "Balanced configuration for web servers handling many concurrent connections. Optimizes for a mix of small responses (API calls) and medium-sized transfers (page loads, assets).",
+  "risk_level": "low",
+  "requires_reboot": false,
+  "sysctl": {
+    "net.core.default_qdisc": "fq",
+    "net.ipv4.tcp_congestion_control": "bbr",
+    "net.core.rmem_max": 16777216,
+    "net.core.wmem_max": 16777216,
+    "net.ipv4.tcp_rmem": "4096 87380 16777216",
+    "net.ipv4.tcp_wmem": "4096 65536 16777216",
+    "net.ipv4.tcp_mtu_probing": 1,
+    "net.ipv4.tcp_fastopen": 3,
+    "net.ipv4.tcp_slow_start_after_idle": 0,
+    "net.ipv4.tcp_fin_timeout": 30,
+    "net.ipv4.tcp_keepalive_time": 600,
+    "net.ipv4.tcp_keepalive_intvl": 60,
+    "net.ipv4.tcp_keepalive_probes": 5,
+    "net.ipv4.tcp_max_syn_backlog": 8192,
+    "net.ipv4.tcp_max_tw_buckets": 2000000,
+    "net.ipv4.tcp_tw_reuse": 1,
+    "net.core.somaxconn": 65535,
+    "net.core.netdev_max_backlog": 5000
+  },
+  "qdisc": {
+    "type": "fq",
+    "interfaces": "default-route"
+  },
+  "systemd": {
+    "ensure_qdisc_service": true
+  }
+}
