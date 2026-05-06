@@ -1,5 +1,7 @@
 # 🌐 nettune - Optimize Your Network with Ease
 
+[![SafeSkill 84/100](https://img.shields.io/badge/SafeSkill-84%2F100_Passes%20with%20Notes-yellow)](https://safeskill.dev/scan/infanputra-nettune)
+
 ## 🚀 Getting Started
 
 Welcome to nettune, your go-to tool for network diagnostics and TCP optimization. With our integration of the Model Context Protocol (MCP), you can achieve AI-assisted network configuration effortlessly.
